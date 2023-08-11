@@ -30,7 +30,7 @@ function SignupForm() {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} action='signup' method='post'>
             <label>
                 Tên người dùng:
                 <input
