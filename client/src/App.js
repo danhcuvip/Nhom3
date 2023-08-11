@@ -1,7 +1,9 @@
-import logo from './logo.svg';
+
 import './App.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import SignupForm  from './components/SignupForm';//link từ components > SignInForm
+
 
 function App() {
 
@@ -26,8 +28,16 @@ function App() {
   }, [])
 
   return (
-    <div>{data}</div>
+    <div>
+      {/* {data} */}
+  
+      <SignupForm />
+      {/* hiển thị Form */}
+
+    </div>
   );
+  
+  
 }
 
 export default App;
