@@ -105,7 +105,7 @@ function Home() {
   };
 
   const boxStyle = {
-    width: '20%',
+    width: '26%',
     margin: '10px',
     padding: '16px',
     border: '1px solid #e0e0e0',
@@ -116,11 +116,12 @@ function Home() {
     borderRadius: '8px',
     overflow: 'hidden',
     transition: 'transform 0.2s',
+    minHeight: '300px',
   };
 
   const imageStyle = {
-    width: '100px',
-    height: '200px',
+    width: '180px',
+    height: '250px',
     objectFit: 'cover',
   };
 
@@ -139,28 +140,36 @@ function Home() {
   };
 
   return (
-    // <div style={containerStyle}>
-    //   <button style={buttonStyle} onClick={sortProductsByPrice}>
-    //   Sort list theo giá
-    //   </button>
-    //   {sortedBooks.map((books) => (
-    //     <div style={boxStyle} key={books.id}>
-    //       {/* <img style={imageStyle} src={product.imageUrl} alt={product.name} /> */}
-    //       <div style={infoStyle}>
-    //         <div style={nameStyle}>{books.title}</div>
-    //         <div style={priceStyle}>{books.quantity} đ</div>
-    //       </div>
-    //     </div>
-    //   ))}
-    // </div>
-    <ul style={{ listStyleType: 'none', padding: 0 }}>
+    <div style={containerStyle}>
+      {/* <button style={buttonStyle} onClick={sortProductsByPrice}>
+      Sort list theo giá
+      </button> */}
       {books.map(book => (
-        <li key={book.id} style={{ margin: '10px 0' }}>
-          {book.title}
-          {book.author_id}
-        </li>
+        <div style={boxStyle} key={books.id}>
+          <img style={imageStyle} src={book.image} alt={book.Title} />
+          <div>Title: {book.title}</div>
+          <div>Author ID: {book.author_id}</div>
+          <div>Publication Year: {book.publication_year}</div>
+          <div>Genre: {book.genre}</div>
+          <div>Quantity: {book.quantity}</div>
+          <div>Location: {book.location}</div>
+          <div>Description: {book.description}</div>
+        </div>
       ))}
-    </ul>
+    </div>
+
+  //   <div style={containerStyle}>
+  //     <ul >
+  //     <button style={buttonStyle} onClick={sortProductsByPrice}>
+  //       Sort list theo giá
+  //     </button>
+  //     {books.map(book => (
+  //       <li key={book.id} style={boxStyle}>
+          
+  //       </li>
+  //     ))}
+  //   </ul>
+  // </div>
   );
 }
 
